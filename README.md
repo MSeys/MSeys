@@ -42,7 +42,7 @@ public async Task RestWritesAreVisibleThroughGraphQL()
         .Query("projects", new { first = 10 })
         .ExpectAsync(new { totalCount = 1 });
 
-    projects.ShouldHaveNoErrors();
+    projects.Should.HaveNoErrors();
 }
 ```
 
