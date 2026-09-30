@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Matthias Seys — Software, SDET and Platform Engineer</title>
+  <desc id="desc">A dark blueprint-style profile header for Matthias Seys, focused on developer tooling, test infrastructure and observability.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07131d"/>
+      <stop offset="0.68" stop-color="#061018"/>
+      <stop offset="1" stop-color="#120e0b"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#2aa9eb"/>
+      <stop offset="1" stop-color="#63dcff"/>
+    </linearGradient>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#d4a06f"/>
+      <stop offset="1" stop-color="#805533"/>
+    </linearGradient>
+    <pattern id="minorGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#8cdcff" stroke-opacity="0.055" stroke-width="1"/>
+    </pattern>
+    <pattern id="majorGrid" width="96" height="96" patternUnits="userSpaceOnUse">
+      <rect width="96" height="96" fill="url(#minorGrid)"/>
+      <path d="M96 0H0V96" fill="none" stroke="#8cdcff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="frame"><rect x="0" y="0" width="1200" height="420" rx="24"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="420" fill="url(#bg)"/>
+    <rect width="1200" height="420" fill="url(#majorGrid)"/>
+    <circle cx="150" cy="0" r="260" fill="#0aa8ff" opacity="0.045"/>
+    <circle cx="1110" cy="360" r="230" fill="#d4a06f" opacity="0.045"/>
+
+    <path d="M64 60h94M64 60v32M1136 60h-94M1136 60v32M64 360h94M64 360v-32M1136 360h-94M1136 360v-32"
+          fill="none" stroke="#4dcaff" stroke-opacity="0.42" stroke-width="1.5"/>
+
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+      <rect x="76" y="74" width="176" height="30" rx="4" fill="#0a2a3d" stroke="#3cc5ff" stroke-opacity="0.45"/>
+      <text x="164" y="94" fill="#65d8ff" font-size="12" text-anchor="middle" letter-spacing="2">[ THE_DEVELOPER ]</text>
+
+      <text x="76" y="176" fill="#f3f8fb" font-size="56" font-weight="700" letter-spacing="2">MATTHIAS SEYS<tspan fill="#49caff">_</tspan></text>
+      <text x="78" y="213" fill="#8da7b5" font-size="14" letter-spacing="3">SOFTWARE  /  SDET  /  PLATFORM</text>
+
+      <rect x="76" y="247" width="564" height="74" rx="8" fill="#06101a" fill-opacity="0.72" stroke="#2bbef8" stroke-opacity="0.22"/>
+      <rect x="76" y="247" width="3" height="74" rx="2" fill="url(#cyan)"/>
+      <text x="102" y="277" fill="#cddbe3" font-size="15">I build the tooling, test infrastructure and foundations</text>
+      <text x="102" y="300" fill="#cddbe3" font-size="15">that make complex systems easier to understand and ship.</text>
+
+      <g transform="translate(76 342)">
+        <circle cx="5" cy="5" r="5" fill="#48cbff" filter="url(#glow)"/>
+        <text x="22" y="10" fill="#65818f" font-size="11" letter-spacing="1.6">CURRENT SIGNAL</text>
+        <text x="142" y="10" fill="#dff6ff" font-size="11" letter-spacing="1.3">PROTOTEST 1.0</text>
+      </g>
+    </g>
+
+    <g transform="translate(744 74)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+      <rect width="380" height="272" rx="14" fill="#07131d" fill-opacity="0.86" stroke="#61d8ff" stroke-opacity="0.28"/>
+      <path d="M0 50h380" stroke="#62d8ff" stroke-opacity="0.18"/>
+      <circle cx="20" cy="25" r="4" fill="#47cbff"/>
+      <circle cx="36" cy="25" r="4" fill="#2b6078"/>
+      <circle cx="52" cy="25" r="4" fill="#6e5139"/>
+      <text x="78" y="30" fill="#7e9aa8" font-size="11" letter-spacing="1.5">SYSTEM_PROFILE</text>
+
+      <text x="28" y="82" fill="#5f7b89" font-size="10" letter-spacing="1.8">FOCUS</text>
+      <text x="28" y="104" fill="#ebf7fc" font-size="14">DEVELOPER EXPERIENCE</text>
+      <path d="M28 119h324" stroke="#2cbdf5" stroke-opacity="0.16"/>
+
+      <text x="28" y="145" fill="#5f7b89" font-size="10" letter-spacing="1.8">BUILDING BLOCKS</text>
+      <g font-size="11">
+        <rect x="28" y="158" width="92" height="27" rx="4" fill="#0a2636" stroke="#3bc7ff" stroke-opacity="0.38"/>
+        <text x="74" y="176" fill="#aeeaff" text-anchor="middle">TOOLING</text>
+        <rect x="130" y="158" width="100" height="27" rx="4" fill="#0a2636" stroke="#3bc7ff" stroke-opacity="0.38"/>
+        <text x="180" y="176" fill="#aeeaff" text-anchor="middle">LIFECYCLE</text>
+        <rect x="240" y="158" width="112" height="27" rx="4" fill="#0a2636" stroke="#3bc7ff" stroke-opacity="0.38"/>
+        <text x="296" y="176" fill="#aeeaff" text-anchor="middle">OBSERVABILITY</text>
+      </g>
+
+      <text x="28" y="218" fill="#5f7b89" font-size="10" letter-spacing="1.8">PRINCIPLE</text>
+      <text x="28" y="243" fill="#cfdce3" font-size="12">IF THE FOUNDATION IS MISSING,</text>
+      <text x="28" y="261" fill="#55d1ff" font-size="12">BUILD IT.</text>
+    </g>
+
+    <g transform="translate(1100 300)" fill="none" stroke="url(#warm)" stroke-width="1.4" opacity="0.72">
+      <circle r="34"/>
+      <circle r="18"/>
+      <path d="M0-34L9-18M29-17L18-7M29 17L9 18M0 34L-9 18M-29 17L-18 7M-29-17L-9-18"/>
+    </g>
+    <text x="1100" y="350" fill="#a8754e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" text-anchor="middle" letter-spacing="1.4">LIGHT / STORY</text>
+  </g>
+</svg>

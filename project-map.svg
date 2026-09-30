@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
+  <title id="title">Matthias Seys project evolution</title>
+  <desc id="desc">A blueprint map showing the evolution from C++ engines and tools to test infrastructure and ProtoTest.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#08141e"/><stop offset="1" stop-color="#050c12"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#244b60"/><stop offset="0.58" stop-color="#2faee7"/><stop offset="1" stop-color="#63ddff"/>
+    </linearGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#8bdcff" stroke-opacity="0.045"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="390" rx="20" fill="url(#bg)"/>
+  <rect width="1200" height="390" rx="20" fill="url(#grid)"/>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <text x="56" y="54" fill="#edf8fc" font-size="20" font-weight="700" letter-spacing="1.6">BUILDING THE THING BEHIND THE THING<tspan fill="#44c9ff">_</tspan></text>
+    <text x="56" y="80" fill="#678392" font-size="11" letter-spacing="1.7">A PROJECT LINE FROM ENGINES TO TEST INFRASTRUCTURE</text>
+
+    <path d="M92 162H1108" fill="none" stroke="url(#line)" stroke-width="2"/>
+    <path d="M1088 154l20 8-20 8" fill="none" stroke="#62dcff" stroke-width="2"/>
+
+    <g font-size="10" letter-spacing="1.4" text-anchor="middle">
+      <text x="154" y="124" fill="#668392">SYSTEMS</text>
+      <text x="442" y="124" fill="#668392">TOOLS</text>
+      <text x="738" y="124" fill="#668392">TEST FOUNDATIONS</text>
+      <text x="1028" y="124" fill="#71ddff">CURRENT</text>
+    </g>
+
+    <g fill="#07131d" stroke="#338db4" stroke-width="1.2">
+      <circle cx="154" cy="162" r="8" fill="#18384a"/>
+      <circle cx="442" cy="162" r="8" fill="#17465d"/>
+      <circle cx="738" cy="162" r="8" fill="#12698d"/>
+      <circle cx="1028" cy="162" r="10" fill="#34c4ff" filter="url(#glow)"/>
+    </g>
+
+    <g font-size="12">
+      <g transform="translate(54 203)">
+        <rect width="210" height="126" rx="9" fill="#07131d" stroke="#285b73"/>
+        <text x="18" y="27" fill="#e7f4f9" font-weight="700">ENGINEERING ROOTS</text>
+        <text x="18" y="51" fill="#63808e" font-size="10">C++ / ENGINES / GRAPHICS</text>
+        <text x="18" y="78" fill="#9fc1cf">ProtoEngine</text>
+        <text x="18" y="98" fill="#9fc1cf">PSV 2D Core</text>
+        <text x="18" y="118" fill="#9fc1cf">Gameboy Tetris System</text>
+      </g>
+
+      <g transform="translate(315 203)">
+        <rect width="254" height="126" rx="9" fill="#07131d" stroke="#2b6c88"/>
+        <text x="18" y="27" fill="#e7f4f9" font-weight="700">MAKE THE WORK EASIER</text>
+        <text x="18" y="51" fill="#63808e" font-size="10">TOOLS / AUTOMATION / DX</text>
+        <text x="18" y="78" fill="#9fc1cf">sol2 ImGui Bindings</text>
+        <text x="18" y="98" fill="#9fc1cf">Platform automation</text>
+        <text x="18" y="118" fill="#9fc1cf">CI/CD foundations</text>
+      </g>
+
+      <g transform="translate(620 203)">
+        <rect width="236" height="126" rx="9" fill="#07131d" stroke="#2f8eb3"/>
+        <text x="18" y="27" fill="#e7f4f9" font-weight="700">MAKE IT VERIFIABLE</text>
+        <text x="18" y="51" fill="#63808e" font-size="10">SDET / LIFECYCLE / TRACE</text>
+        <text x="18" y="78" fill="#9fc1cf">Parallel test context</text>
+        <text x="18" y="98" fill="#9fc1cf">Cross-layer integration</text>
+        <text x="18" y="118" fill="#9fc1cf">Actionable diagnostics</text>
+      </g>
+
+      <g transform="translate(907 193)">
+        <rect width="239" height="146" rx="11" fill="#082131" stroke="#4bcfff" stroke-width="1.5"/>
+        <rect x="18" y="17" width="74" height="20" rx="3" fill="#0e4057"/>
+        <text x="55" y="31" fill="#75e0ff" text-anchor="middle" font-size="9" letter-spacing="1.3">PROTOTEST</text>
+        <text x="18" y="67" fill="#f2fbff" font-size="22" font-weight="700">ONE CONTEXT.</text>
+        <text x="18" y="92" fill="#f2fbff" font-size="22" font-weight="700">EVERY LAYER.</text>
+        <text x="18" y="119" fill="#78a0b1" font-size="10">LIFECYCLE · CLEANUP · TRACE</text>
+        <text x="18" y="137" fill="#52d1ff" font-size="10">PROTOTEST.DEV →</text>
+      </g>
+    </g>
+
+    <text x="56" y="367" fill="#4e6875" font-size="10" letter-spacing="1.4">THE THREAD NEVER CHANGED: UNDERSTAND THE SYSTEM, FIND THE FRICTION, BUILD THE MISSING FOUNDATION.</text>
+  </g>
+</svg>
