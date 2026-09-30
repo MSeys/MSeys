@@ -1,26 +1,31 @@
-<p align="center">
-  <a href="https://matthiasseys.com">
-    <img src="./profile-header.svg" alt="Matthias Seys — Software, SDET and Platform Engineer" width="100%" />
-  </a>
-</p>
+<a href="https://matthiasseys.com"><img src="./profile-header.svg" alt="Matthias Seys — Software, SDET and Platform. Building the tools behind better software." width="100%" /></a>
 
 <p align="center">
-  <a href="https://dev.matthiasseys.com">Developer portfolio</a>
-  &nbsp;·&nbsp;
-  <a href="https://prototest.dev">ProtoTest</a>
-  &nbsp;·&nbsp;
-  <a href="https://trace.prototest.dev/?demo=1">Live trace</a>
-  &nbsp;·&nbsp;
+  <a href="https://dev.matthiasseys.com">Developer portfolio</a> &nbsp;·&nbsp;
+  <a href="https://prototest.dev">ProtoTest</a> &nbsp;·&nbsp;
   <a href="https://photos.matthiasseys.com">Photography</a>
 </p>
 
-I’m a software, SDET and platform engineer from Belgium. I build the tooling, test infrastructure and foundations that make complex systems easier to understand, verify and ship.
+Hi, I’m Matthias — a software, SDET and platform engineer from Belgium.
 
-My work tends to live one layer beneath the product: shared lifecycle, reliable automation, developer experience, observability and the tools that help other engineers move with confidence.
+I like building the things that help other developers work: tools, test infrastructure and shared foundations. My background spans C++ engine projects, .NET development, test automation and platform engineering.
 
-## Current build: ProtoTest
+> For every problem, there’s a solution. If there are none… create one.
 
-[ProtoTest](https://prototest.dev) is a composable integration-testing foundation for .NET. A test can call an API, wait for an event, inspect a database, drive a browser or verify a generated file while every integration shares the same context, lifecycle, cleanup and trace.
+## Building now
+
+<a href="https://prototest.dev"><img src="./prototest.svg" alt="ProtoTest — Test the whole journey. Trace every layer. Composable integration testing for .NET." width="100%" /></a>
+
+**[ProtoTest](https://prototest.dev)** brings the setup around an integration test into one place. APIs, databases, messaging, browsers and generated files share the same test context, lifecycle and cleanup.
+
+**[ProtoTrace](https://trace.prototest.dev/?demo=1)** keeps the setup, requests, checks and teardown together, so a failure comes with the story of what happened.
+
+[Source](https://github.com/MSeys/ProtoTest) · [Get started](https://prototest.dev/docs/getting-started/installation) · [NuGet](https://www.nuget.org/packages?q=ProtoTest) · [Explore a sample trace](https://trace.prototest.dev/?demo=1)
+
+<details>
+<summary><strong>See ProtoTest in action — REST meets GraphQL</strong></summary>
+
+This example creates a project through REST and checks the collection through GraphQL. `SignedInAs` is application-specific setup; both clients use the same test context.
 
 ```csharp
 [ProtoTest]
@@ -37,41 +42,30 @@ public async Task RestWritesAreVisibleThroughGraphQL()
         .Query("projects", new { first = 10 })
         .ExpectAsync(new { totalCount = 1 });
 
-    projects.Should.HaveNoErrors();
+    projects.ShouldHaveNoErrors();
 }
 ```
 
-<p>
-  <a href="https://github.com/MSeys/ProtoTest"><strong>Source</strong></a>
-  &nbsp;·&nbsp;
-  <a href="https://prototest.dev/docs/getting-started/installation"><strong>Get started</strong></a>
-  &nbsp;·&nbsp;
-  <a href="https://www.nuget.org/packages?q=ProtoTest"><strong>NuGet</strong></a>
-  &nbsp;·&nbsp;
-  <a href="https://trace.prototest.dev/?demo=1"><strong>Open a sample trace</strong></a>
-</p>
+[See the documentation for setup and complete examples.](https://prototest.dev/docs/recipes/overview)
 
-<p align="center">
-  <img src="./project-map.svg" alt="From engine projects and developer tools to test infrastructure and ProtoTest" width="100%" />
-</p>
+</details>
 
-## Selected systems
+## Things I’ve built
 
-| Project | What it explores |
-| --- | --- |
-| [ProtoTest](https://github.com/MSeys/ProtoTest) | Composable .NET integration testing across APIs, databases, messaging, browsers and generated files. |
-| [sol2 ImGui Bindings](https://github.com/MSeys/sol2_ImGui_Bindings) | Lua bindings for Dear ImGui through sol2 — a small tool that became useful well beyond its original project. |
-| [PSV 2D Core](https://github.com/MSeys/PSV_2DCore) | An event-based 2D framework for PlayStation Vita apps and games. |
-| [Gameboy Tetris System](https://github.com/MSeys/GameboyTetrisSystem) | A Tetris-playing system limited to the Game Boy’s virtual screen and buttons. |
-| [ProtoEngine](https://github.com/MSeys/ProtoEngine) | An earlier C++ engine project and part of the path toward building foundations instead of only features. |
+Some earlier projects — different platforms, the same interest in how things work underneath.
 
-## The kind of work I care about
+<a href="https://github.com/MSeys/ProtoEngine"><img src="./protoengine.svg" alt="ProtoEngine — Exploring engine foundations through an earlier C++ project. Open repository." width="100%" /></a>
 
-- **Developer tooling** that removes repeated friction instead of documenting around it.
-- **Test infrastructure** that keeps setup readable, cleanup deterministic and parallel execution isolated.
-- **Observability** that explains a failure as a journey, not just a final exception.
-- **Platform foundations** that are pleasant to extend and difficult to misuse.
+<a href="https://github.com/MSeys/sol2_ImGui_Bindings"><img src="./sol2-imgui.svg" alt="sol2 ImGui Bindings — Connecting Lua and Dear ImGui through sol2 bindings. Open repository." width="100%" /></a>
 
-> For every problem, there’s a solution. If there are none… create one.
+<a href="https://github.com/MSeys/PSV_2DCore"><img src="./psv-2d-core.svg" alt="PSV 2D Core — An event-based 2D framework for PlayStation Vita apps and games. Open repository." width="100%" /></a>
 
-<sub>When I’m away from code, I’m usually looking for a story through a camera lens.</sub>
+Also: **[Gameboy Tetris System](https://github.com/MSeys/GameboyTetrisSystem)** — a Tetris-playing system that only uses the Game Boy’s virtual screen and buttons.
+
+[Explore the rest of my portfolio →](https://dev.matthiasseys.com/#project)
+
+## Beyond code
+
+<a href="https://photos.matthiasseys.com"><img src="./photography.svg" alt="Away from the keyboard — A different kind of focus. Photography, light and stories. Open gallery." width="100%" /></a>
+
+I also enjoy telling stories through photography. **[Visit my gallery →](https://photos.matthiasseys.com)**

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="176" viewBox="0 0 800 176" role="img" aria-labelledby="title desc">
+<title id="title">ProtoEngine</title><desc id="desc">Exploring engine foundations through an earlier C++ project.</desc>
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0c2535"/><stop offset="1" stop-color="#07121c"/></linearGradient>
+ <linearGradient id="accent"><stop stop-color="#36b8f1"/><stop offset="1" stop-color="#82e4ec"/></linearGradient>
+ <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#9ddfff" stroke-opacity=".045"/></pattern>
+ <clipPath id="clip"><rect x="1" y="1" width="798" height="174" rx="16"/></clipPath>
+</defs>
+<g clip-path="url(#clip)">
+<rect width="800" height="176" fill="url(#bg)"/><rect width="800" height="176" fill="url(#grid)"/>
+
+<rect x="28" y="28" width="112" height="120" rx="12" fill="#0c2130" stroke="#2b5165"/>
+<g transform="translate(84 88)" fill="none" stroke="#71c9e8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M0-35 32-17v36L0 37-32 19v-36Z"/><path d="m-32-17 32 18 32-18M0 1v36" stroke="#397694"/><path d="m-17-8 17-10 17 10v20L0 22-17 12Z" stroke="#a0e7f8"/><path d="m-17-8 17 10 17-10M0 2v20"/></g>
+<text x="164" y="39" font-family="'DejaVu Sans Mono',Consolas,monospace" fill="#82adbf" font-size="16" letter-spacing="1.4">ENGINE DEVELOPMENT</text>
+<text x="164" y="79" font-family="'DejaVu Sans',Arial,sans-serif" fill="#f0f7fb" font-size="31" font-weight="700">ProtoEngine</text>
+<g font-family="'DejaVu Sans',Arial,sans-serif" fill="#b4c9d4" font-size="23"><text x="164" y="117">Exploring engine foundations</text><text x="164" y="147">through an earlier C++ project.</text></g>
+<path d="M747 41h17m-7-7 7 7-7 7" fill="none" stroke="#75c7e5" stroke-width="2"/>
+</g>
+<rect x=".5" y=".5" width="799" height="175" rx="16" fill="none" stroke="#244657"/>
+</svg>

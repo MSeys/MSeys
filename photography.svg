@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="192" viewBox="0 0 800 192" role="img" aria-labelledby="title desc">
+<title id="title">Away from the keyboard — Photography</title><desc id="desc">A different kind of focus. Explore Matthias Seys's photography.</desc>
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#201b17"/><stop offset="1" stop-color="#100f10"/></linearGradient>
+ <linearGradient id="accent"><stop stop-color="#d2ab7f"/><stop offset="1" stop-color="#f3d6ae"/></linearGradient>
+ <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#b89570" stroke-opacity=".045"/></pattern>
+ <clipPath id="clip"><rect x="1" y="1" width="798" height="190" rx="16"/></clipPath>
+</defs>
+<g clip-path="url(#clip)">
+<rect width="800" height="192" fill="url(#bg)"/><rect width="800" height="192" fill="url(#grid)"/>
+
+<g font-family="'DejaVu Sans Mono',Consolas,monospace"><text x="36" y="44" fill="#c4a583" font-size="17" letter-spacing="1.5">AWAY FROM THE KEYBOARD</text></g>
+<text x="36" y="101" font-family="Georgia,'DejaVu Serif',serif" font-size="43" font-style="italic" fill="#f4e6d4">A different kind of focus.</text>
+<text x="38" y="151" font-family="'DejaVu Sans',Arial,sans-serif" font-size="24" fill="#c8b7a4">Photography · Light · Stories</text>
+<g transform="translate(698 96)" fill="none" stroke="#bc9167" stroke-width="2">
+<circle r="51"/><circle r="43" stroke-opacity=".2"/>
+<path d="M0-23 20-11.5 20 11.5 0 23-20 11.5-20-11.5Z"/>
+<path d="M0-23h45M20-11.5 42.5 27.5M20 11.5-2.5 50.5M0 23h-45M-20 11.5-42.5-27.5M-20-11.5 2.5-50.5" stroke-opacity=".65"/>
+<path d="M-62-62h18m-18 0v18M62 62H44m18 0V44" stroke="#6e523b"/>
+</g>
+</g>
+<rect x=".5" y=".5" width="799" height="191" rx="16" fill="none" stroke="#514333"/>
+</svg>
