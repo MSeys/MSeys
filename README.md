@@ -45,7 +45,8 @@ I build the tools behind software: test infrastructure, developer tooling and th
 
 ## Writing
 
-<!-- BLOG-POST-LIST:START -->- [Why nobody trusts their integration tests](https://prototest.dev/blog/why-nobody-trusts-their-integration-tests/)
+<!-- BLOG-POST-LIST:START -->
+- [Why nobody trusts their integration tests](https://prototest.dev/blog/why-nobody-trusts-their-integration-tests/)
 - [Why ProtoTest 1.0 shipped too early](https://prototest.dev/blog/why-1-0-shipped-too-early/)
 <!-- BLOG-POST-LIST:END -->
 
