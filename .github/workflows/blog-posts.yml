@@ -1,0 +1,22 @@
+# Keeps the Writing list in the profile README in step with the ProtoTest blog.
+name: Latest blog posts
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          feed_list: "https://prototest.dev/blog/rss.xml"
+          max_post_count: 3
+          template: "- [$title]($url)$newline"
+          commit_message: "Update the latest blog posts in the profile README."
