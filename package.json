@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "description": "Renders the pictures of the profile README (tools/render.cjs).",
+  "scripts": { "render": "node tools/render.cjs" },
+  "devDependencies": { "playwright-core": "1.64.0", "sharp": "0.34.5" }
+}
