@@ -18,5 +18,7 @@ jobs:
         with:
           feed_list: "https://prototest.dev/blog/rss.xml"
           max_post_count: 3
-          template: "- [$title]($url)$newline"
+          # The newline before each post, not after: so the first one starts on its own line after the START comment
+          # (on the same line, GitHub reads it as part of the comment's HTML, not as a list item).
+          template: "$newline- [$title]($url)"
           commit_message: "Update the latest blog posts in the profile README."
