@@ -19,7 +19,7 @@ I build the tools behind software: test infrastructure, developer tooling and th
 ## Now
 
 <a href="https://trace.prototest.dev/?trace=https%3A%2F%2Fraw.githubusercontent.com%2FMSeys%2FMSeys%2Fmain%2Ftraces%2Fopencsms-demo-pr.prototrace">
-  <img src="./assets/now.webp" alt="ProtoTest 1.1: one integration test across your API, database, browser and devices, with a trace for every run. A real pull-request run: 5 failed, 69 passed." width="100%">
+  <img src="./assets/now.webp" alt="ProtoTest 1.1: one integration test across your API, database, browser and devices, with a trace for every run, on 5 test runners and .NET 8–10. A real pull-request run: 5 failed, 69 passed." width="100%">
 </a>
 
 **[ProtoTest](https://prototest.dev)** lets one integration test cross your API, database, browser and devices, and when it fails, the trace shows exactly why. It runs inside NUnit, xUnit, MSTest or TUnit, so a team keeps the runner it has. [![Latest release](https://img.shields.io/github/v/release/MSeys/ProtoTest?label=release&color=19a8b5&style=flat-square)](https://github.com/MSeys/ProtoTest/releases/latest)
