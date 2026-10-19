@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- The profile README as one picture: one surface from the developer's navy to the photographer's warm black, one grid,
+     one rail down the left that ties the parts together. tools/render.cjs photographs it into assets/profile.webp. -->
+<style>
+@font-face { font-family: "Space Grotesk"; font-weight: 700; src: url("fonts/space-grotesk-700.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-weight: 400 700; src: url("fonts/manrope-600.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 400 600; src: url("fonts/jetbrains-mono-500.woff2") format("woff2"); }
+@font-face { font-family: "Cormorant Garamond"; font-weight: 600; font-style: italic; src: url("fonts/cormorant-600i.woff2") format("woff2"); }
+:root {
+  --navy: #061520; --panel: #0d2433; --line: rgba(255,255,255,.09); --line-2: rgba(255,255,255,.16);
+  --text: #e8f1f6; --soft: #c8d8e1; --muted: #93adbd; --cyan: #19a8b5; --cyan-2: #5fd3dc; --amber: #e6b450;
+  --black: #110d0a; --cream: #f1ece6; --warm: #d9a46c; --sand: #e2d6c8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: transparent; }
+body { width: 1000px; font-family: "Manrope", system-ui, sans-serif; color: var(--text); -webkit-font-smoothing: antialiased; }
+.card { position: relative; width: 1000px; height: 1300px; overflow: hidden; border-radius: 18px; border: 1px solid var(--line-2);
+  background:
+    radial-gradient(ellipse 55% 30% at 82% 10%, rgba(25,168,181,.20), transparent 70%),
+    radial-gradient(ellipse 60% 26% at 18% 92%, rgba(217,164,108,.16), transparent 70%),
+    linear-gradient(180deg, var(--navy) 0%, var(--navy) 60%, #0d1214 72%, var(--black) 82%); }
+/* One grid over the whole picture, fading out where the photographs begin. */
+.card::before { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(rgba(95,211,220,.05) 1px, transparent 1px) 0 0 / 28px 28px, linear-gradient(90deg, rgba(95,211,220,.05) 1px, transparent 1px) 0 0 / 28px 28px;
+  -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 80%); }
+/* The rail: one line down the left, from cyan to amber, with a node at each part. */
+.rail { position: absolute; left: 38px; top: 108px; bottom: 120px; width: 2px; border-radius: 2px; background: linear-gradient(180deg, var(--cyan-2), var(--cyan) 58%, var(--warm) 80%); opacity: .55; }
+.part { position: absolute; left: 64px; right: 48px; }
+.node { position: absolute; left: -32px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: var(--navy); border: 2px solid var(--cyan-2); box-shadow: 0 0 0 4px rgba(95,211,220,.12); }
+.eyebrow { font: 600 12.5px "JetBrains Mono", monospace; letter-spacing: .2em; text-transform: uppercase; color: var(--cyan-2); }
+
+/* The top line: the three sites' marks and the name, the address on the right. */
+.top { position: absolute; left: 30px; right: 36px; top: 28px; display: flex; align-items: center; gap: 14px; }
+.marks { display: inline-flex; gap: 5px; padding: 4px; border: 1px solid var(--line-2); border-radius: 12px; background: rgba(0,0,0,.25); }
+.marks img { width: 26px; height: 26px; border-radius: 7px; opacity: .55; filter: grayscale(.35); }
+.marks img.on { opacity: 1; filter: none; box-shadow: 0 0 0 1.5px var(--navy), 0 0 0 3px rgba(255,255,255,.85); }
+.top b { font: 600 13px "JetBrains Mono", monospace; letter-spacing: .3em; color: var(--text); }
+.top span { margin-left: auto; font: 500 12px "JetBrains Mono", monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+
+/* 1. Who: the line, the work in one sentence, the portrait in both sites' colours. */
+.who { top: 104px; height: 290px; }
+.who h1 { margin-top: 14px; font: 700 50px/1.04 "Space Grotesk", sans-serif; letter-spacing: -.02em; }
+.who h1 span { color: var(--cyan-2); }
+.who p.lead { margin-top: 18px; width: 560px; font-size: 16px; line-height: 1.6; color: var(--soft); }
+.who p.lead b { color: var(--text); }
+.portrait { position: absolute; right: 26px; top: 6px; width: 236px; height: 236px; border-radius: 50%; padding: 5px; background: linear-gradient(135deg, var(--cyan-2), var(--warm)); box-shadow: 0 30px 70px rgba(0,0,0,.55); }
+.portrait img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+
+/* 2. Now: ProtoTest, the text on the left, a real trace on the right running off the edge. */
+.now { top: 430px; height: 320px; }
+.now h2 { margin-top: 12px; display: flex; align-items: center; gap: 12px; font: 700 38px/1 "Space Grotesk", sans-serif; letter-spacing: -.02em; }
+.now h2 em { padding: 3px 9px; border-radius: 6px; background: var(--cyan-2); color: #04202a; font: 700 16px "JetBrains Mono", monospace; font-style: normal; }
+.now .lead { margin-top: 14px; width: 400px; font-size: 15px; line-height: 1.55; color: var(--soft); text-wrap: pretty; }
+.now .next { margin-top: 12px; font: 500 12.5px "JetBrains Mono", monospace; color: var(--muted); }
+.now .next b { font-weight: 600; color: var(--amber); }
+.stats { display: flex; gap: 10px; margin-top: 18px; }
+.stat { padding: 11px 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(13,36,51,.75); min-width: 118px; }
+.stat b { display: block; font: 700 20px "Space Grotesk", sans-serif; color: var(--cyan-2); }
+.stat span { font-size: 12.5px; color: var(--muted); }
+.win { position: absolute; left: 452px; top: 20px; width: 540px; border-radius: 12px; overflow: hidden; background: #0b1822; border: 1px solid var(--line-2); box-shadow: 0 40px 80px -30px rgba(0,0,0,.85); }
+.win .bar { height: 26px; display: flex; align-items: center; gap: 6px; padding: 0 12px; background: #132634; border-bottom: 1px solid rgba(255,255,255,.08); font: 500 11px "JetBrains Mono", monospace; color: #829cac; }
+.win .bar i { width: 8px; height: 8px; border-radius: 50%; background: #2d4352; }
+.win .bar span { margin-left: 8px; }
+.win img { display: block; width: 100%; height: 250px; object-fit: cover; object-position: top left; }
+.chip { position: absolute; left: 470px; top: 262px; padding: 9px 14px; border-radius: 9px; background: var(--cyan); color: #04202a; font: 600 13px "Manrope", sans-serif; box-shadow: 0 14px 30px rgba(0,0,0,.45); }
+.chip b { color: #8a1f1f; }
+
+/* 3. The path: one line of stops, work in amber. */
+.path { top: 800px; height: 200px; }
+.path .head { display: flex; justify-content: space-between; align-items: baseline; }
+.path .head p:last-child { font: 700 17px "Space Grotesk", sans-serif; color: var(--soft); }
+.path ol { list-style: none; display: flex; justify-content: space-between; margin-top: 30px; position: relative; }
+.path ol::before { content: ""; position: absolute; left: 6%; right: 6%; top: 8px; height: 2px; background: linear-gradient(90deg, rgba(95,211,220,.35), var(--cyan-2)); }
+.path li { position: relative; flex: 1 1 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 3px; }
+.path li i { width: 18px; height: 18px; border-radius: 50%; background: var(--navy); border: 2px solid var(--cyan-2); margin-bottom: 9px; position: relative; }
+.path li.work i { border-color: var(--amber); }
+.path li.here i { background: var(--cyan-2); box-shadow: 0 0 0 6px rgba(95,211,220,.18); }
+.path small { font: 500 11.5px "JetBrains Mono", monospace; color: var(--muted); }
+.path b { font: 700 14.5px "Space Grotesk", sans-serif; }
+.path span { font-size: 12px; color: var(--muted); }
+
+/* 4. Beyond code: the warm half, a few prints in a row. */
+.beyond { top: 1010px; height: 240px; }
+.beyond .node { border-color: var(--warm); background: var(--black); box-shadow: 0 0 0 4px rgba(217,164,108,.14); }
+.beyond .eyebrow { color: var(--warm); }
+.beyond h2 { margin-top: 10px; font: 600 44px/.98 "Cormorant Garamond", serif; font-style: italic; color: var(--cream); }
+.beyond h2 span { color: var(--warm); }
+.beyond .lead { margin-top: 12px; width: 290px; text-wrap: pretty; font-size: 14.5px; line-height: 1.5; color: var(--sand); }
+.prints { position: absolute; left: 330px; right: 0; top: 0; height: 230px; display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 10px; }
+.prints figure { position: relative; overflow: hidden; border-radius: 6px; border: 3px solid var(--cream); box-shadow: 0 14px 30px rgba(0,0,0,.55); }
+.prints figure:nth-child(even) { margin-top: 18px; }
+.prints img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.prints figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 16px 8px 6px; background: linear-gradient(0deg, rgba(17,13,10,.85), transparent); font: 500 10px "JetBrains Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: var(--cream); }
+.foot { position: absolute; left: 64px; right: 48px; bottom: 26px; display: flex; justify-content: space-between; font: 500 11.5px "JetBrains Mono", monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--warm); opacity: .85; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="rail"></div>
+  <div class="top">
+    <span class="marks"><img class="on" src="src/portal.png" alt=""><img src="src/dev.png" alt=""><img src="src/photos.png" alt=""></span>
+    <b>MATTHIAS SEYS</b>
+    <span>matthiasseys.com</span>
+  </div>
+
+  <section class="part who">
+    <i class="node"></i>
+    <p class="eyebrow">Test automation engineer · C#/.NET</p>
+    <h1>Building the tools<br><span>behind software.</span></h1>
+    <p class="lead">Test infrastructure and developer tooling. At GeoDynamics I designed the .NET framework the team tests with: <b>300+ tests in 15 minutes</b> after every deployment, where the regression took a week by hand.</p>
+    <div class="portrait"><img src="src/portrait.webp" alt=""></div>
+  </section>
+
+  <section class="part now">
+    <i class="node"></i>
+    <p class="eyebrow">Now · open source</p>
+    <h2>ProtoTest <em>1.1</em></h2>
+    <p class="lead">One integration test across your API, database, browser and devices, and when it fails, a trace that shows exactly why.</p>
+    <p class="next"><b>Next, 1.2:</b> it says why a test failed, with the proof.</p>
+    <div class="stats">
+      <div class="stat"><b>1 trace</b><span>for every run</span></div>
+      <div class="stat"><b>5</b><span>test runners</span></div>
+      <div class="stat"><b>.NET 8–10</b><span>supported</span></div>
+    </div>
+    <div class="win"><div class="bar"><i></i><i></i><i></i><span>trace.prototest.dev</span></div><img src="src/trace.png" alt=""></div>
+    <p class="chip">A real pull-request run: <b>5 failed</b>, 69 passed</p>
+  </section>
+
+  <section class="part path">
+    <i class="node"></i>
+    <div class="head"><p class="eyebrow">The path so far</p><p>From level editors to test frameworks.</p></div>
+    <ol>
+      <li><i></i><small>2019</small><b>Parallelium</b><span>level editor</span></li>
+      <li><i></i><small>2020</small><b>ProtoEngine</b><span>engine &amp; editor</span></li>
+      <li><i></i><small>2020</small><b>sol2 ImGui</b><span>tools for devs</span></li>
+      <li class="work"><i></i><small>2021–22</small><b>Larian</b><span>Baldur's Gate 3</span></li>
+      <li class="work"><i></i><small>2022</small><b>DECK13</b><span>Atlas Fallen</span></li>
+      <li class="work"><i></i><small>2023–26</small><b>GeoDynamics</b><span>300+ tests, 15 min</span></li>
+      <li><i></i><small>2024</small><b>Handheld Co.</b><span>open source</span></li>
+      <li class="here"><i></i><small>2026</small><b>ProtoTest</b><span>open source</span></li>
+    </ol>
+  </section>
+
+  <section class="part beyond">
+    <i class="node"></i>
+    <p class="eyebrow">Beyond code</p>
+    <h2>Every picture<br><span>has a story.</span></h2>
+    <p class="lead">Whatever catches my eye: animals, people, music and the streets around them.</p>
+    <div class="prints">
+      <figure><img src="https://img.matthiasseys.com/photos/2026-08-24-dsc-3614/m.webp" style="object-position: 74% 40%" alt=""><figcaption>Otter · Pairi Daiza</figcaption></figure>
+      <figure><img src="https://img.matthiasseys.com/photos/2026-08-22-dsc-3197/m.webp" style="object-position: 50% 30%" alt=""><figcaption>Ladiescover</figcaption></figure>
+      <figure><img src="https://img.matthiasseys.com/photos/2026-07-25-dsc-1842/m.webp" style="object-position: 60% 20%" alt=""><figcaption>Chaco owl</figcaption></figure>
+      <figure><img src="https://img.matthiasseys.com/photos/2026-08-24-dsc-4504/m.webp" alt=""><figcaption>Cheetah</figcaption></figure>
+    </div>
+  </section>
+  <p class="foot"><span>dev.matthiasseys.com</span><span>photos.matthiasseys.com</span></p>
+</div>
+</body>
+</html>
