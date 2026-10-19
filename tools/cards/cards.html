@@ -37,7 +37,15 @@ body { width: 1000px; font-family: "Manrope", system-ui, sans-serif; color: var(
 /* Wider than the half, so the watermark in the corner stays outside it. */
 .header .half.photo img { width: 112%; height: 112%; object-fit: cover; object-position: 74% 40%; filter: saturate(.85); }
 .header .half.photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(17,13,10,.97), rgba(17,13,10,.78) 55%, rgba(17,13,10,.55)); }
-.header .name { position: absolute; top: 28px; left: 0; right: 0; text-align: center; font: 600 14px "JetBrains Mono", monospace; letter-spacing: .32em; text-transform: uppercase; color: var(--text); }
+.header .name { position: absolute; top: 22px; left: 0; right: 0; display: flex; align-items: center; justify-content: center; gap: 16px; font: 600 14px "JetBrains Mono", monospace; letter-spacing: .32em; text-transform: uppercase; color: var(--text); }
+/* The three sites' marks, as at the top of every site: the one this card stands for lit up, the other two dimmed. */
+.marks { display: inline-flex; align-items: center; gap: 5px; padding: 4px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: rgba(0,0,0,.25); }
+.marks img { display: block; width: 28px; height: 28px; border-radius: 8px; opacity: .55; filter: grayscale(.35); }
+.marks img.on { opacity: 1; filter: none; box-shadow: 0 0 0 1.5px #0b0f12, 0 0 0 3px var(--ring, rgba(255,255,255,.85)); }
+.mark-row { display: flex; align-items: center; gap: 12px; }
+.mark-row .marks { padding: 3px; gap: 4px; } .mark-row .marks img { width: 24px; height: 24px; border-radius: 7px; }
+.now .next { display: flex; align-items: center; gap: 9px; font: 500 12.5px "JetBrains Mono", monospace; color: var(--muted); }
+.now .next b { font-weight: 600; color: var(--amber); }
 .header .side { position: absolute; top: 0; bottom: 0; width: 330px; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
 .header .side.left { left: 46px; align-items: flex-end; text-align: right; }
 .header .side.right { right: 46px; }
@@ -59,7 +67,7 @@ body { width: 1000px; font-family: "Manrope", system-ui, sans-serif; color: var(
 .now .eyebrow { color: var(--cyan-2); }
 .now h2 { display: flex; align-items: center; gap: 12px; font: 700 40px/1 "Space Grotesk", sans-serif; letter-spacing: -.02em; }
 .now h2 em { padding: 3px 9px; border-radius: 6px; background: var(--cyan-2); color: #04202a; font: 700 17px "JetBrains Mono", monospace; font-style: normal; }
-.now .lead { font-size: 15.5px; line-height: 1.55; color: var(--soft); }
+.now .lead { font-size: 15.5px; line-height: 1.55; color: var(--soft); text-wrap: pretty; }
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 4px; }
 .stat { padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
 .stat b { display: block; font: 700 21px "Space Grotesk", sans-serif; color: var(--cyan-2); }
@@ -76,8 +84,8 @@ body { width: 1000px; font-family: "Manrope", system-ui, sans-serif; color: var(
 
 /* ---- path: the career as the developer site's timeline ---- */
 .path { height: 270px; }
-.path .head { position: absolute; left: 44px; right: 44px; top: 30px; display: flex; justify-content: space-between; align-items: baseline; }
-.path .head .eyebrow { color: var(--cyan-2); }
+.path .head { position: absolute; left: 44px; right: 44px; top: 30px; display: flex; justify-content: space-between; align-items: center; }
+.path .head p.eyebrow { font: 600 13px "JetBrains Mono", monospace; color: var(--cyan-2); }
 .path .head p { font: 700 19px "Space Grotesk", sans-serif; color: var(--soft); }
 .path .line { position: absolute; left: 44px; right: 44px; top: 112px; height: 2px; background: linear-gradient(90deg, rgba(95,211,220,.25), var(--cyan-2)); }
 .path ol { position: absolute; left: 44px; right: 44px; top: 103px; display: grid; grid-template-columns: repeat(8, 1fr); list-style: none; }
@@ -112,12 +120,15 @@ body { width: 1000px; font-family: "Manrope", system-ui, sans-serif; color: var(
 <div id="card"></div>
 <script>
 const IMG = 'https://img.matthiasseys.com/photos/';
+// The marks row: portal, developer, photos; the one a card stands for lit up (ringed in its site's colour).
+const RING = { portal: 'rgba(255,255,255,.85)', dev: '#5fd3dc', photos: '#d9a46c' };
+const marks = on => `<span class="marks" style="--ring: ${RING[on]}">${['portal', 'dev', 'photos'].map(m => `<img src="src/${m}.png"${m === on ? ' class="on"' : ''} alt="">`).join('')}</span>`;
 const CARDS = {
   header: `
     <div class="card header">
       <div class="half dev dev-bg"></div>
       <div class="half photo"><img src="${IMG}2026-08-24-dsc-3614/m.webp" alt=""></div>
-      <p class="name">Matthias Seys</p>
+      <div class="name">${marks('portal')}<span>Matthias Seys</span></div>
       <div class="side left">
         <p class="eyebrow" style="color: var(--cyan-2)">The developer</p>
         <h1>Building the tools<br><span>behind software.</span></h1>
@@ -134,9 +145,10 @@ const CARDS = {
   now: `
     <div class="card now dev-bg">
       <div class="text">
-        <p class="eyebrow">Now · open source</p>
+        <div class="mark-row">${marks('dev')}<p class="eyebrow">Now · open source</p></div>
         <h2>ProtoTest <em>1.1</em></h2>
         <p class="lead">One integration test across your API, database, browser and devices, and when it fails, a trace that shows exactly why.</p>
+        <p class="next"><b>Next, 1.2:</b> it says why a test failed, with the proof.</p>
         <div class="stats">
           <div class="stat"><b>1 trace</b><span>for every run</span></div>
           <div class="stat"><b>5</b><span>test runners</span></div>
@@ -148,7 +160,7 @@ const CARDS = {
     </div>`,
   path: `
     <div class="card path dev-bg">
-      <div class="head"><p class="eyebrow">The path so far</p><p>From level editors to test frameworks.</p></div>
+      <div class="head"><div class="mark-row">${marks('dev')}<p class="eyebrow">The path so far</p></div><p>From level editors to test frameworks.</p></div>
       <div class="line"></div>
       <ol>
         <li><i></i><small>2019</small><b>Parallelium</b><span>level editor</span></li>
@@ -165,7 +177,7 @@ const CARDS = {
   photos: `
     <div class="card photos">
       <div class="text">
-        <p class="eyebrow">Beyond code</p>
+        <div class="mark-row" style="--ring: var(--warm)">${marks('photos')}<p class="eyebrow">Beyond code</p></div>
         <h2>Every picture<br><span>has a story.</span></h2>
         <p class="lead">Whatever catches my eye: animals, people, music and the streets around them.</p>
         <p class="site">photos.matthiasseys.com</p>

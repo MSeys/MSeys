@@ -3,8 +3,8 @@
 </a>
 
 <p align="center">
-  <b>Test Automation Engineer · Quality &amp; Developer Experience</b> · Kortrijk region, Belgium<br>
-  Open to roles in test architecture, automation and tooling · hybrid
+  <b>Test Automation Engineer · .NET</b> · Kortrijk region, Belgium<br>
+  Open to a permanent role in test architecture, automation or tooling · hybrid or remote
 </p>
 
 <p align="center">
